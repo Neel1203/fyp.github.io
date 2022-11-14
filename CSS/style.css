@@ -30,7 +30,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     padding: 15px 4px;
-    transition: 0.5s;
+    transition: 0.35s;
 }
 .sembtn{
     display: flex;
@@ -45,6 +45,7 @@ body{
     height: 40px;
     cursor: pointer;
     outline: none;
+    transition: 0.35s;
 }
 .sembtn:hover{
     background-color: rgb(0, 0, 0);
@@ -66,9 +67,11 @@ table .day{
     display: flex;
     justify-content: space-between;
     padding: 1rem 33rem;
+    transition: 0.35s;
 }
 .custom-btn{
     width: 38px;
+    transition: 0.35s;
 }
 td{
     height: 50px;
