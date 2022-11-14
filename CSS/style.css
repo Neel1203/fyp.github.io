@@ -30,6 +30,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     padding: 15px 4px;
+    transition: 0.5s;
 }
 .sembtn{
     display: flex;
