@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+#navbar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #400000;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar p
+{
+    color: white;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 900;
+}
+#btn-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 4px;
+}
+.sembtn{
+    display: flex;
+    align-items: center;
+    padding: 0px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    font-weight: 500;
+    font-size: 18px;
+    height: 40px;
+    cursor: pointer;
+    outline: none;
+}
+.sembtn:hover{
+    background-color: rgb(0, 0, 0);
+}
+a{
+    text-decoration: none;
+}
+table, td, th{
+    min-width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+    padding: 15.5px;
+}
+table .day{
+    width: 40px;
+    padding: 0px 6px;
+}
+.form-btn-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 33rem;
+}
+.custom-btn{
+    width: 38px;
+}
+td{
+    height: 50px;
+}
