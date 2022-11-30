@@ -38,7 +38,7 @@ body{
     padding: 0px 15px;
     border: none;
     border-radius: 5px;
-    background-color: red;
+    background-color: #400000;
     color: white;
     font-weight: 500;
     font-size: 18px;
@@ -75,4 +75,22 @@ table .day{
 }
 td{
     height: 50px;
+}
+.brk{
+    width: 40px;
+}
+select{
+    width: 100%;
+    border: 2px solid black;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+select:focus{
+    outline: none;
+}
+select option{
+    text-align: center;
+    background-color: rgb(233, 233, 233);
 }
