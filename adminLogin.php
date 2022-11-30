@@ -8,7 +8,7 @@ $pass = $_POST['pwd'];
 
 // $result = mysqli_query($conn, $sql);
 
-if ($email == "admin" && $pass == "pass123")
+if ($email == 'admin' && $pass == 'pass123')
 {
     header("Location: ./sem1.php");
 }
