@@ -93,4 +93,5 @@ select:focus{
 select option{
     text-align: center;
     background-color: rgb(233, 233, 233);
+    padding: 0;
 }
