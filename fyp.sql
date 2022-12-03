@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 01:19 PM
+-- Generation Time: Dec 03, 2022 at 08:03 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -161,6 +161,142 @@ INSERT INTO `faculties` (`sr_no`, `faculty_id`, `faculty_name`, `email`) VALUES
 (10, '110', 'Mr. Nilesh Kitke', 'nilesh.kitke@gmail.com'),
 (11, '111', 'Mr. Swapnil Tambe', 'sytambe@somaiya.edu');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester1`
+--
+
+CREATE TABLE `semester1` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `semester1`
+--
+
+INSERT INTO `semester1` (`id`, `day`, `course`, `faculty`, `class`, `time`) VALUES
+(1, 'monday', 'Basic Mathematics', '', '7', '10:30 - 11:30'),
+(2, 'monday', 'Basic Mathematics', '', '7', '10:30 - 11:30'),
+(3, 'monday', 'Communication Skills', 'Mr. Debraj Moulick', '7', '10:30 - 11:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester1paarth`
+--
+
+CREATE TABLE `semester1paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `semester1paarth`
+--
+
+INSERT INTO `semester1paarth` (`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`) VALUES
+('Monday', 'Communication Skills', '', '', '', '', ''),
+('Monday', 'Basic Mathematics', '', '', '', '', ''),
+('Monday', 'Basic Mathematics', '', '', '', '', ''),
+('Monday', 'Web Design Lab', '', '', '', '', ''),
+('Monday', 'Physics - I', '', '', '', '', ''),
+('Monday', 'Physics - Isubjectsubject', '', '', '', '', ''),
+('Monday', 'Basic MathematicsMrs. Snehal Suryavanshi201', '', '', '', '', ''),
+('Monday', 'Basic Mathematics`<br>`Mrs. Snehal Suryavanshi`<br>`201', '', '', '', '', ''),
+('Monday', 'Communication Skills`<br>`Mrs. Snehal Suryavanshi`<br>`201', '', '', '', '', ''),
+('Monday', 'Communication Skills`.`<br>`.`Mrs. Snehal Suryavanshi`.`<br>`.`201', '', '', '', '', ''),
+('Monday', 'Basic Mathematics`.`<br>`.`Mrs. Varsha Kinge`.`<br>`.`201', '', '', '', '', ''),
+('Monday', 'Basic Mathematics`<br>`Mrs. Varsha Kinge`<br>`201', '', '', '', '', ''),
+('Monday', 'Communication Skills`<br>`Dr. S.G. Kolte`<br>`201', '', '', '', '', ''),
+('Monday', 'Communication Skills` <br> `Dr. S.G. Kolte` <br> `201', '', '', '', '', ''),
+('Monday', 'Physics - I` <br> `Mrs. Varsha Kinge` <br> `201', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester2`
+--
+
+CREATE TABLE `semester2` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester3`
+--
+
+CREATE TABLE `semester3` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester4`
+--
+
+CREATE TABLE `semester4` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester5`
+--
+
+CREATE TABLE `semester5` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester6`
+--
+
+CREATE TABLE `semester6` (
+  `id` int(11) NOT NULL,
+  `day` varchar(255) NOT NULL,
+  `course` varchar(255) NOT NULL,
+  `faculty` varchar(255) NOT NULL,
+  `class` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -184,6 +320,42 @@ ALTER TABLE `faculties`
   ADD PRIMARY KEY (`sr_no`);
 
 --
+-- Indexes for table `semester1`
+--
+ALTER TABLE `semester1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `semester2`
+--
+ALTER TABLE `semester2`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `semester3`
+--
+ALTER TABLE `semester3`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `semester4`
+--
+ALTER TABLE `semester4`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `semester5`
+--
+ALTER TABLE `semester5`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `semester6`
+--
+ALTER TABLE `semester6`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -204,6 +376,42 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `faculties`
   MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `semester1`
+--
+ALTER TABLE `semester1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `semester2`
+--
+ALTER TABLE `semester2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `semester3`
+--
+ALTER TABLE `semester3`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `semester4`
+--
+ALTER TABLE `semester4`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `semester5`
+--
+ALTER TABLE `semester5`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `semester6`
+--
+ALTER TABLE `semester6`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
