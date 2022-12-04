@@ -17,12 +17,12 @@ include 'connection.php';
     </section>
 
     <section id="btn-container">
-        <a href="./index.html"><button class="sembtn">First Semester</button></a>
-        <a href="./sem2.html"><button class="sembtn">Second Semester</button></a>
-        <a href="./sem3.html"><button class="sembtn">Third Semester</button></a>
-        <a href="./sem4.html"><button class="sembtn">Fourth Semester</button></a>
-        <a href="./sem5.html"><button class="sembtn">Fifth Semester</button></a>
-        <a href="./sem6.html"><button class="sembtn">Sixth Semester</button></a>
+        <a href="#"><button class="sembtn">First Semester</button></a>
+        <a href="./sem2.php"><button class="sembtn">Second Semester</button></a>
+        <a href="./sem3.php"><button class="sembtn">Third Semester</button></a>
+        <a href="./sem4.php"><button class="sembtn">Fourth Semester</button></a>
+        <a href="./sem5.php"><button class="sembtn">Fifth Semester</button></a>
+        <a href="./sem6.php"><button class="sembtn">Sixth Semester</button></a>
     </section>
     <form action="./sem1process.php" method="post" autocomplete="off">
     <table>

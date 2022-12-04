@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 01:39 PM
+-- Generation Time: Dec 04, 2022 at 07:20 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -201,15 +201,6 @@ CREATE TABLE `semester1paarth` (
   `period6` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `semester1paarth`
---
-
-INSERT INTO `semester1paarth` (`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`) VALUES
-('Monday', 'Communication Skills\'Mrs. Niti Patel\'201', 'Communication Skills\'Dr. S.G. Kolte\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Snehal Suryavanshi\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201'),
-('Monday', 'Communication Skills\'Mrs. Niti Patel\'201', 'Communication Skills\'Dr. S.G. Kolte\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Snehal Suryavanshi\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201'),
-('Tuesday', 'Communication Skills\'Mrs. Snehal Suryavanshi\'202', 'Communication Skills\'Mrs. Snehal Suryavanshi\'201', 'Communication Skills\'Dr. S.G. Kolte\'201', 'Basic Mathematics\'Mrs. Snehal Suryavanshi\'7', 'Basic Mathematics\'Dr. S.G. Kolte\'7', 'Communication Skills\'Dr. S.G. Kolte\'7');
-
 -- --------------------------------------------------------
 
 --
@@ -223,6 +214,22 @@ CREATE TABLE `semester2` (
   `faculty` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
   `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester2paarth`
+--
+
+CREATE TABLE `semester2paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -243,6 +250,22 @@ CREATE TABLE `semester3` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `semester3paarth`
+--
+
+CREATE TABLE `semester3paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `semester4`
 --
 
@@ -253,6 +276,22 @@ CREATE TABLE `semester4` (
   `faculty` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
   `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester4paarth`
+--
+
+CREATE TABLE `semester4paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -273,6 +312,22 @@ CREATE TABLE `semester5` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `semester5paarth`
+--
+
+CREATE TABLE `semester5paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `semester6`
 --
 
@@ -283,6 +338,22 @@ CREATE TABLE `semester6` (
   `faculty` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
   `time` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `semester6paarth`
+--
+
+CREATE TABLE `semester6paarth` (
+  `day` varchar(255) NOT NULL,
+  `period1` varchar(255) NOT NULL,
+  `period2` varchar(255) NOT NULL,
+  `period3` varchar(255) NOT NULL,
+  `period4` varchar(255) NOT NULL,
+  `period5` varchar(255) NOT NULL,
+  `period6` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

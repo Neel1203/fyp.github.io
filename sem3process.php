@@ -153,7 +153,7 @@ if(isset($_POST['upload']))
     $sat_faculty_6 = $_POST['sat_faculty_6'];
     $sat_class_6 = $_POST['sat_class_6'];
 
-    $mon_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $mon_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
         'Monday', 
         '$mon_course_1''$mon_faculty_1''$mon_class_1',
@@ -163,7 +163,7 @@ if(isset($_POST['upload']))
         '$mon_course_5''$mon_faculty_5''$mon_class_5',
         '$mon_course_6''$mon_faculty_6''$mon_class_6'
     )";
-    $tue_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $tue_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
         'Tuesday', 
         '$tue_course_1''$tue_faculty_1''$tue_class_1',
@@ -174,7 +174,7 @@ if(isset($_POST['upload']))
         '$tue_course_6''$tue_faculty_6''$tue_class_6'
     )";
 
-    $wed_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $wed_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
     'Wednesday', 
         '$wed_course_1''$wed_faculty_1''$wed_class_1',
@@ -184,7 +184,7 @@ if(isset($_POST['upload']))
         '$wed_course_5''$wed_faculty_5''$wed_class_5',
         '$wed_course_6''$wed_faculty_6''$wed_class_6'
     )";
-    $thu_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $thu_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
     'Wednesday', 
         '$thu_course_1''$thu_faculty_1''$thu_class_1',
@@ -194,7 +194,7 @@ if(isset($_POST['upload']))
         '$thu_course_5''$thu_faculty_5''$thu_class_5',
         '$thu_course_6''$thu_faculty_6''$thu_class_6'
     )";
-    $fri_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $fri_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
     'Wednesday', 
         '$fri_course_1''$fri_faculty_1''$fri_class_1',
@@ -204,7 +204,7 @@ if(isset($_POST['upload']))
         '$fri_course_5''$fri_faculty_5''$fri_class_5',
         '$fri_course_6''$fri_faculty_6''$fri_class_6'
     )";
-    $sat_Q = "INSERT INTO `semester1paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
+    $sat_Q = "INSERT INTO `semester3paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
     'Wednesday', 
         '$sat_course_1''$sat_faculty_1''$sat_class_1',
@@ -235,7 +235,7 @@ if(isset($_POST['upload']))
         window.alert('Data Not Inserted')
         window.location.href='javascript:history.go(-1)';
         </SCRIPT>";
-        header("Location: ./sem1.php");
+        header("Location: ./sem3.php");
     }
 }
 
