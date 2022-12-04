@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 08:03 PM
+-- Generation Time: Dec 04, 2022 at 01:39 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -206,21 +206,9 @@ CREATE TABLE `semester1paarth` (
 --
 
 INSERT INTO `semester1paarth` (`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`) VALUES
-('Monday', 'Communication Skills', '', '', '', '', ''),
-('Monday', 'Basic Mathematics', '', '', '', '', ''),
-('Monday', 'Basic Mathematics', '', '', '', '', ''),
-('Monday', 'Web Design Lab', '', '', '', '', ''),
-('Monday', 'Physics - I', '', '', '', '', ''),
-('Monday', 'Physics - Isubjectsubject', '', '', '', '', ''),
-('Monday', 'Basic MathematicsMrs. Snehal Suryavanshi201', '', '', '', '', ''),
-('Monday', 'Basic Mathematics`<br>`Mrs. Snehal Suryavanshi`<br>`201', '', '', '', '', ''),
-('Monday', 'Communication Skills`<br>`Mrs. Snehal Suryavanshi`<br>`201', '', '', '', '', ''),
-('Monday', 'Communication Skills`.`<br>`.`Mrs. Snehal Suryavanshi`.`<br>`.`201', '', '', '', '', ''),
-('Monday', 'Basic Mathematics`.`<br>`.`Mrs. Varsha Kinge`.`<br>`.`201', '', '', '', '', ''),
-('Monday', 'Basic Mathematics`<br>`Mrs. Varsha Kinge`<br>`201', '', '', '', '', ''),
-('Monday', 'Communication Skills`<br>`Dr. S.G. Kolte`<br>`201', '', '', '', '', ''),
-('Monday', 'Communication Skills` <br> `Dr. S.G. Kolte` <br> `201', '', '', '', '', ''),
-('Monday', 'Physics - I` <br> `Mrs. Varsha Kinge` <br> `201', '', '', '', '', '');
+('Monday', 'Communication Skills\'Mrs. Niti Patel\'201', 'Communication Skills\'Dr. S.G. Kolte\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Snehal Suryavanshi\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201'),
+('Monday', 'Communication Skills\'Mrs. Niti Patel\'201', 'Communication Skills\'Dr. S.G. Kolte\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Varsha Kinge\'201', 'Communication Skills\'Mrs. Snehal Suryavanshi\'7', 'Communication Skills\'Mrs. Varsha Kinge\'201'),
+('Tuesday', 'Communication Skills\'Mrs. Snehal Suryavanshi\'202', 'Communication Skills\'Mrs. Snehal Suryavanshi\'201', 'Communication Skills\'Dr. S.G. Kolte\'201', 'Basic Mathematics\'Mrs. Snehal Suryavanshi\'7', 'Basic Mathematics\'Dr. S.G. Kolte\'7', 'Communication Skills\'Dr. S.G. Kolte\'7');
 
 -- --------------------------------------------------------
 

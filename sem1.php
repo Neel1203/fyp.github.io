@@ -1,18 +1,8 @@
 <?php
 include 'connection.php';
-
-$couSql = "SELECT * FROM courses WHERE sem = 1";
-$couResult = mysqli_query($conn, $couSql);
-
-$facSql = "SELECT * FROM faculties";
-$facResult = mysqli_query($conn, $facSql);
-
-$classSql = "SELECT * FROM classroom";
-$classResult = mysqli_query($conn, $classSql);
 ?>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +11,6 @@ $classResult = mysqli_query($conn, $classSql);
     <script src="./JS/script.js"></script>
     <title>Time Table Generator</title>
 </head>
-
 <body>
     <section id="navbar">
         <p>TIME TABLE GENERATOR, Computer Engineering Department</p>
@@ -35,8 +24,7 @@ $classResult = mysqli_query($conn, $classSql);
         <a href="./sem5.html"><button class="sembtn">Fifth Semester</button></a>
         <a href="./sem6.html"><button class="sembtn">Sixth Semester</button></a>
     </section>
-
-    <!-- <form action="#" method="post"> -->
+    <form action="./sem1process.php" method="post" autocomplete="off">
     <table>
         <tr>
             <th></th>
@@ -49,1000 +37,1802 @@ $classResult = mysqli_query($conn, $classSql);
             <th class="time">3:30 <br>-<br> 4:30</th>
             <th class="time">4:30 <br>-<br> 5:30</th>
         </tr>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! MONDAY !!!!! ---------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+    
         <tr>
             <th class="day">Monday</th>
-            <form action="" method="post">
-                <td>
-                    <select name="mon_course_1" id="mon_course_1">
-                        <option value="subject">-- Select Course --</option>
-                        <?php
-                        while ($subs = mysqli_fetch_assoc($couResult)) {
-                            echo "<option value='" . $subs['course_name'] . "'>" . $subs['course_name'] . "</options>";
-                        }
-                        ?>
-                    </select><br>
-                    <select name="mon_faculty_1" id="mon_faculty_1">
-                        <option value="subject">-- Select Faculty --</option>
-                        <?php
-                        while ($facs = mysqli_fetch_assoc($facResult)) {
-                            echo "<option value='" . $facs['faculty_name'] . "'>" . $facs['faculty_name'] . "</options>";
-                        }
-                        ?>
-                    </select><br>
-                    <select name="mon_class_1" id="mon_class_1">
-                        <option value="subject">-- Select Class --</option>
-                        <?php
-                        while ($class = mysqli_fetch_assoc($classResult)) {
-                            echo "<option value='" . $class['room_no'] . "'>" . $class['room_no'] . " (" . $class['type'] . ")" . "</options>";
-                        }
-                        ?>
-                    </select>
-                    <input type="submit" value="Go" name="go">
-                </td>
-            </form>
-            <?php
-                include 'connection.php';
-
-                if (isset($_POST['go'])) {
-                    $mon_course_1 = $_POST['mon_course_1'];
-                    $mon_faculty_1 = $_POST['mon_faculty_1'];
-                    $mon_class_1 = $_POST['mon_class_1'];
-
-                    // $mon_p1Q = "INSERT INTO `semester1paarth(`day`, `period1`) VALUES ('Monday', '$mon_course_1'<br>'$mon_faculty_1'<br>'$mon_class_1')";
-                    $mon_p1Q = "INSERT INTO `semester1paarth` (`day`, `period1`) VALUES ('Monday', '$mon_course_1` <br> `$mon_faculty_1` <br> `$mon_class_1')";
-                    $mon_q1Q = mysqli_query($conn, $mon_p1Q);
-
-                    if (!$mon_q1Q) {
-                        echo "<script type='text/javascript'>alert('Not Done')</script>";
-                    } else {
-                        echo "<script type='text/javascript'>alert('Done')</script>";
-                    }
+            <td>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_1" id="mon_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
                 }
                 ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="mon_faculty_1" id="mon_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="mon_class_1" id="mon_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
+                </select>
+            </td>
             <td>
-                <select name="mon_course_2" id="mon_course_2">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_2" id="mon_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
                 <select name="mon_faculty_2" id="mon_faculty_2">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
                 <select name="mon_class_2" id="mon_class_2">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">B</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_3" id="mon_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="mon_faculty_3" id="mon_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="mon_class_3" id="mon_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_4" id="mon_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="mon_faculty_4" id="mon_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="mon_class_4" id="mon_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">B</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_5" id="mon_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="mon_faculty_5" id="mon_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="mon_class_5" id="mon_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="mon_course_6" id="mon_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="mon_faculty_6" id="mon_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="mon_class_6" id="mon_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! TUESDAY !!!!! ---------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
             <th class="day">Tuesday</th>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_1" id="tue_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_1" id="tue_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_1" id="tue_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+           
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_2" id="tue_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_2" id="tue_faculty_2">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_2" id="tue_class_2">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">R</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_3" id="tue_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_3" id="tue_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_3" id="tue_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_4" id="tue_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_4" id="tue_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_4" id="tue_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">R</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_5" id="tue_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_5" id="tue_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_5" id="tue_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="tue_course_6" id="tue_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="tue_faculty_6" id="tue_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="tue_class_6" id="tue_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! WEDNESDAY !!!!! -------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
             <th class="day">Wednesday</th>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_1" id="wed_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_1" id="wed_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_1" id="wed_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+           
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_2" id="wed_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_2" id="wed_faculty_2">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_2" id="wed_class_2">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">E</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_3" id="wed_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_3" id="wed_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_3" id="wed_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_4" id="wed_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_4" id="wed_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_4" id="wed_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">E</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_5" id="wed_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_5" id="wed_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_5" id="wed_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="wed_course_6" id="wed_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="wed_faculty_6" id="wed_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="wed_class_6" id="wed_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while ($data = mysqli_fetch_array($classResult)) {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! THURSDAY !!!!! -------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------------------------------->
         <tr>
             <th class="day">Thursday</th>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_1" id="thu_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_1" id="thu_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_1" id="thu_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+           
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_2" id="thu_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_2" id="thu_faculty_2">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_2" id="thu_class_2">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">A</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_3" id="thu_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_3" id="thu_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_3" id="thu_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_4" id="thu_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_4" id="thu_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_4" id="thu_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">A</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_5" id="thu_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_5" id="thu_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_5" id="thu_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="thu_course_6" id="thu_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="thu_faculty_6" id="thu_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="thu_class_6" id="thu_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {   
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! FRIDAY !!!!! -------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
             <th class="day">Friday</th>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_1" id="fri_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_1" id="fri_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_1" id="fri_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+           
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_2" id="fri_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_2" id="fri_faculty_2">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_2" id="fri_class_2">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">K</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_3" id="fri_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_3" id="fri_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_3" id="fri_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_4" id="fri_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_4" id="fri_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_4" id="fri_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">K</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_5" id="fri_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_5" id="fri_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_5" id="fri_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="fri_course_6" id="fri_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="fri_faculty_6" id="fri_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="fri_class_6" id="fri_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {   
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!--!!!!! SATURDAY !!!!! ------------------------------------------------------------------------------------------------------>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
             <th class="day">Saturday</th>
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_1" id="sat_course_1">
+                <option value="subject">-- Select Course--</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_1" id="sat_faculty_1">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+                
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_1" id="sat_class_1">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+           
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_2" id="sat_course_2">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }   
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_2" id="sat_faculty_2">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_2" id="sat_class_2">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">S</th>
+            
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_3" id="sat_course_3">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_3" id="sat_faculty_3">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_3" id="sat_class_3">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_4" id="sat_course_4">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_4" id="sat_faculty_4">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_4" id="sat_class_4">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <th class="brk">S</th>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_5" id="sat_course_5">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_5" id="sat_faculty_5">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_5" id="sat_class_5">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
+
             <td>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Course--</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Faculty --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                </select><br>
-                <select name="sem1" id="mon">
-                    <option value="subject">-- Select Class --</option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
-                    <option value="subject"></option>
+                <?php
+                $couSql = "SELECT * FROM courses WHERE sem = 1";
+                $couResult = mysqli_query($conn, $couSql);
+                ?>
+                <select name="sat_course_6" id="sat_course_6">;
+                <option value="">-- Select Course --</option>
+                <?php
+                while($data = mysqli_fetch_array($couResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $facSql = "SELECT * FROM faculties";
+                $facResult = mysqli_query($conn, $facSql);
+                ?>
+                <select name="sat_faculty_6" id="sat_faculty_6">
+                <option value="faculty">-- Select Faculty--</option>
+                <?php
+                while($data = mysqli_fetch_array($facResult))
+                {
+                    echo "<option value='$data[2]'>$data[2]</option>";
+                }
+                ?>
+                </select>
+
+                <br>
+
+                <?php
+                $classSql = "SELECT * FROM classroom";
+                $classResult = mysqli_query($conn, $classSql);
+                ?>
+                <select name="sat_class_6" id="sat_class_6">
+                <option value="class">-- Select Class--</option>
+                <?php
+                while($data = mysqli_fetch_array($classResult))
+                {   
+                    echo "<option value='$data[1]'>$data[1]</option>";
+                }
+                ?>
                 </select>
             </td>
         </tr>
     </table>
     <div class="form-btn-container">
-        <input type="submit" value="Upload" class="sembtn" style="display: flex; align-items: center;">
-        <input style="display: flex; align-items: center;" value="Print" class="sembtn custom-btn">
+        <input type="submit" value="Upload" name="upload" class="sembtn" style="margin: 20px;">
     </div>
-    <!-- </form> -->
+    </form>
 </body>
-
 </html>

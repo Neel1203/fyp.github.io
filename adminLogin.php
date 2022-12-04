@@ -1,6 +1,5 @@
 <?php
 include 'connection.php';
-header("Location: ./sem1.php");
 
 $email = $_POST['uid'];
 $pass = $_POST['pwd'];
@@ -11,6 +10,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1)
 {
+    header("Location: ./sem1.php");
 }
 else {
     echo ("<SCRIPT LANGUAGE='JavaScript'>
