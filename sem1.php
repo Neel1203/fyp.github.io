@@ -1832,6 +1832,7 @@ include 'connection.php';
     </table>
     <div class="form-btn-container">
         <input type="submit" value="Upload" name="upload" class="sembtn" style="margin: 20px;">
+        <input type="submit" value="Print" name="print" class="sembtn" style="margin: 20px;" onclick="window.print()">
     </div>
     </form>
 </body>
