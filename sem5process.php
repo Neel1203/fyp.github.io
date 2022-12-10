@@ -186,7 +186,7 @@ if(isset($_POST['upload']))
     )";
     $thu_Q = "INSERT INTO `semester5paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
-    'Wednesday', 
+    'Thursday', 
         '$thu_course_1''$thu_faculty_1''$thu_class_1',
         '$thu_course_2''$thu_faculty_2''$thu_class_2',
         '$thu_course_3''$thu_faculty_3''$thu_class_3',
@@ -196,7 +196,7 @@ if(isset($_POST['upload']))
     )";
     $fri_Q = "INSERT INTO `semester5paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
-    'Wednesday', 
+    'Friday', 
         '$fri_course_1''$fri_faculty_1''$fri_class_1',
         '$fri_course_2''$fri_faculty_2''$fri_class_2',
         '$fri_course_3''$fri_faculty_3''$fri_class_3',
@@ -206,7 +206,7 @@ if(isset($_POST['upload']))
     )";
     $sat_Q = "INSERT INTO `semester5paarth`(`day`, `period1`, `period2`, `period3`, `period4`, `period5`, `period6`)
     VALUES (
-    'Wednesday', 
+    'SAturday', 
         '$sat_course_1''$sat_faculty_1''$sat_class_1',
         '$sat_course_2''$sat_faculty_2''$sat_class_2',
         '$sat_course_3''$sat_faculty_3''$sat_class_3',

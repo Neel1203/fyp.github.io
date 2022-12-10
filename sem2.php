@@ -98,7 +98,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="mon_course_2" id="mon_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -148,7 +148,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="mon_course_3" id="mon_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -196,7 +196,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="mon_course_4" id="mon_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -246,7 +246,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="mon_course_5" id="mon_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -294,7 +294,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="mon_course_6" id="mon_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -397,7 +397,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="tue_course_2" id="tue_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -447,7 +447,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="tue_course_3" id="tue_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -495,7 +495,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="tue_course_4" id="tue_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -545,7 +545,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="tue_course_5" id="tue_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -593,7 +593,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="tue_course_6" id="tue_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -696,7 +696,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="wed_course_2" id="wed_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -746,7 +746,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="wed_course_3" id="wed_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -794,7 +794,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="wed_course_4" id="wed_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -844,7 +844,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="wed_course_5" id="wed_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -892,7 +892,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="wed_course_6" id="wed_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -994,7 +994,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="thu_course_2" id="thu_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1044,7 +1044,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="thu_course_3" id="thu_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1092,7 +1092,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="thu_course_4" id="thu_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1142,7 +1142,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="thu_course_5" id="thu_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1190,7 +1190,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="thu_course_6" id="thu_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1293,7 +1293,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="fri_course_2" id="fri_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1343,7 +1343,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="fri_course_3" id="fri_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1391,7 +1391,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="fri_course_4" id="fri_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1441,7 +1441,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="fri_course_5" id="fri_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1488,7 +1488,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="fri_course_6" id="fri_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1591,7 +1591,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="sat_course_2" id="sat_course_2">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1641,7 +1641,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="sat_course_3" id="sat_course_3">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1689,7 +1689,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="sat_course_4" id="sat_course_4">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1739,7 +1739,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="sat_course_5" id="sat_course_5">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
@@ -1787,7 +1787,7 @@ include 'connection.php';
                 $couResult = mysqli_query($conn, $couSql);
                 ?>
                 <select name="sat_course_6" id="sat_course_6">;
-                <option value="">-- Select Course --</option>
+                <option value="subject">-- Select Course --</option>
                 <?php
                 while($data = mysqli_fetch_array($couResult))
                 {
