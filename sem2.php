@@ -12,6 +12,7 @@ include 'connection.php';
     <title>Time Table Generator</title>
 </head>
 <body>
+    <div class="cut">
     <section id="navbar">
         <p>TIME TABLE GENERATOR, Computer Engineering Department</p>
     </section>
@@ -24,18 +25,36 @@ include 'connection.php';
         <a href="./sem5.php"><button class="sembtn">Fifth Semester</button></a>
         <a href="./sem6.php"><button class="sembtn">Sixth Semester</button></a>
     </section>
+    </div>
+
+    <style>
+        @media print{
+            .cut, .cut *{
+                display: none;
+                width: 0;
+                height: 0;
+            }
+            .main, .main *{
+                table td{
+                    padding: 0px;
+                }
+            }
+        }
+    </style>
+
     <form action="./sem2process.php" method="post" autocomplete="off">
+    <div class="main">
     <table>
         <tr>
             <th></th>
-            <th class="time">10:30 <br>-<br> 11:30</th>
-            <th class="time">11:30 <br>-<br> 12:30</th>
-            <th class="time">12:30 <br>-<br> 1:15</th>
-            <th class="time">1:15 <br>-<br> 2:15</th>
-            <th class="time">2-15 <br>-<br> 3:15</th>
-            <th class="time">3:15 <br>-<br> 3:30</th>
-            <th class="time">3:30 <br>-<br> 4:30</th>
-            <th class="time">4:30 <br>-<br> 5:30</th>
+            <th class="time" style="padding: 10px">10:30 <br>-<br> 11:30</th>
+            <th class="time" style="padding: 10px">11:30 <br>-<br> 12:30</th>
+            <th class="time" style="padding: 10px">12:30 <br>-<br> 1:15</th>
+            <th class="time" style="padding: 10px">1:15 <br>-<br> 2:15</th>
+            <th class="time" style="padding: 10px">2-15 <br>-<br> 3:15</th>
+            <th class="time" style="padding: 10px">3:15 <br>-<br> 3:30</th>
+            <th class="time" style="padding: 10px">3:30 <br>-<br> 4:30</th>
+            <th class="time" style="padding: 10px">4:30 <br>-<br> 5:30</th>
         </tr>
 <!------------------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------->
@@ -44,8 +63,8 @@ include 'connection.php';
 <!------------------------------------------------------------------------------------------------------------------------------->
     
         <tr>
-            <th class="day">Monday</th>
-            <td>
+            <th class="day">Mon</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -92,7 +111,7 @@ include 'connection.php';
                 ?>
                 </select>
             </td>
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -140,9 +159,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">B</th>
+            <th class="brk" style="padding: 12px;">B</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -190,7 +209,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -238,9 +257,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">B</th>
+            <th class="brk" style="padding: 12px;">B</th>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -288,7 +307,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -342,8 +361,8 @@ include 'connection.php';
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Tuesday</th>
-            <td>
+            <th class="day">Tue</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -391,7 +410,7 @@ include 'connection.php';
                 </select>
             </td>
            
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -439,9 +458,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">R</th>
+            <th class="brk" style="padding: 12px;">R</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -489,7 +508,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -537,9 +556,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">R</th>
+            <th class="brk" style="padding: 12px;">R</th>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -587,7 +606,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -641,8 +660,8 @@ include 'connection.php';
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Wednesday</th>
-            <td>
+            <th class="day">Wed</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -690,7 +709,7 @@ include 'connection.php';
                 </select>
             </td>
            
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -738,9 +757,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">E</th>
+            <th class="brk" style="padding: 12px;">E</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -788,7 +807,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -939,8 +958,8 @@ include 'connection.php';
 <!------------------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Thursday</th>
-            <td>
+            <th class="day">Thu</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -988,7 +1007,7 @@ include 'connection.php';
                 </select>
             </td>
            
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1036,9 +1055,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">A</th>
+            <th class="brk" style="padding: 12px;">A</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1086,7 +1105,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1134,9 +1153,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">A</th>
+            <th class="brk" style="padding: 12px;">A</th>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1184,7 +1203,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1238,8 +1257,8 @@ include 'connection.php';
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Friday</th>
-            <td>
+            <th class="day">Fri</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1287,7 +1306,7 @@ include 'connection.php';
                 </select>
             </td>
            
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1335,9 +1354,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">K</th>
+            <th class="brk" style="padding: 12px;">K</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1385,7 +1404,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1433,9 +1452,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">K</th>
+            <th class="brk" style="padding: 12px;">K</th>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1482,7 +1501,7 @@ include 'connection.php';
                 ?>
                 </select>
             </td>
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1536,8 +1555,8 @@ include 'connection.php';
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Saturday</th>
-            <td>
+            <th class="day">Sat</th>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1585,7 +1604,7 @@ include 'connection.php';
                 </select>
             </td>
            
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1633,9 +1652,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">S</th>
+            <th class="brk" style="padding: 12px;">S</th>
             
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1683,7 +1702,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1731,9 +1750,9 @@ include 'connection.php';
                 </select>
             </td>
 
-            <th class="brk">S</th>
+            <th class="brk" style="padding: 12px;">S</th>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1781,7 +1800,7 @@ include 'connection.php';
                 </select>
             </td>
 
-            <td>
+            <td style="padding: 12px;">
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 2";
                 $couResult = mysqli_query($conn, $couSql);
@@ -1830,8 +1849,12 @@ include 'connection.php';
             </td>
         </tr>
     </table>
+    </div>
+    <div class="cut">
     <div class="form-btn-container">
         <input type="submit" value="Upload" name="upload" class="sembtn" style="margin: 20px;">
+        <button class="sembtn" style="margin: 20px;" onclick="window.print(); return false;">Print</button>
+    </div>
     </div>
     </form>
 </body>

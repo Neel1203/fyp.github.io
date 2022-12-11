@@ -12,6 +12,7 @@ include 'connection.php';
     <title>Time Table Generator</title>
 </head>
 <body>
+    <div class="cut">
     <section id="navbar">
         <p>TIME TABLE GENERATOR, Computer Engineering Department</p>
     </section>
@@ -24,7 +25,31 @@ include 'connection.php';
         <a href="#"><button class="sembtn">Fifth Semester</button></a>
         <a href="./sem6.php"><button class="sembtn">Sixth Semester</button></a>
     </section>
+    </div>
+
+    <style>
+        th.time{
+            padding: 10px;
+        }
+        td, th.brk{
+            padding: 12px;
+        }
+        @media print{
+            .cut, .cut *{
+                display: none;
+                width: 0;
+                height: 0;
+            }
+            .main, .main *{
+                table td{
+                    padding: 0px;
+                }
+            }
+        }
+    </style>
+
     <form action="./sem5process.php" method="post" autocomplete="off">
+    <div class="main">
     <table>
         <tr>
             <th></th>
@@ -44,7 +69,7 @@ include 'connection.php';
 <!------------------------------------------------------------------------------------------------------------------------------->
     
         <tr>
-            <th class="day">Monday</th>
+            <th class="day">Mon</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -342,7 +367,7 @@ include 'connection.php';
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Tuesday</th>
+            <th class="day">Tue</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -641,7 +666,7 @@ include 'connection.php';
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Wednesday</th>
+            <th class="day">Wed</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -939,7 +964,7 @@ include 'connection.php';
 <!------------------------------------------------------------------------------------------------------------------------------->
 <!------------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Thursday</th>
+            <th class="day">Thu</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -1238,7 +1263,7 @@ include 'connection.php';
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Friday</th>
+            <th class="day">Fri</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -1536,7 +1561,7 @@ include 'connection.php';
 <!----------------------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------------------->
         <tr>
-            <th class="day">Saturday</th>
+            <th class="day">Sat</th>
             <td>
                 <?php
                 $couSql = "SELECT * FROM courses WHERE sem = 5";
@@ -1830,8 +1855,12 @@ include 'connection.php';
             </td>
         </tr>
     </table>
+    </div>
+    <div class="cut">
     <div class="form-btn-container">
         <input type="submit" value="Upload" name="upload" class="sembtn" style="margin: 20px;">
+        <button class="sembtn" style="margin: 20px;" onclick="window.print(); return false;">Print</button>
+    </div>
     </div>
     </form>
 </body>
