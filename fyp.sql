@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2022 at 07:20 PM
+-- Generation Time: Dec 11, 2022 at 09:27 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -164,26 +164,19 @@ INSERT INTO `faculties` (`sr_no`, `faculty_id`, `faculty_name`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `semester1`
+-- Table structure for table `final`
 --
 
-CREATE TABLE `semester1` (
+CREATE TABLE `final` (
   `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
+  `courses` varchar(255) NOT NULL,
   `faculty` varchar(255) NOT NULL,
   `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
+  `day` varchar(255) NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `period` varchar(255) NOT NULL,
+  `sem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `semester1`
---
-
-INSERT INTO `semester1` (`id`, `day`, `course`, `faculty`, `class`, `time`) VALUES
-(1, 'monday', 'Basic Mathematics', '', '7', '10:30 - 11:30'),
-(2, 'monday', 'Basic Mathematics', '', '7', '10:30 - 11:30'),
-(3, 'monday', 'Communication Skills', 'Mr. Debraj Moulick', '7', '10:30 - 11:30');
 
 -- --------------------------------------------------------
 
@@ -199,21 +192,6 @@ CREATE TABLE `semester1paarth` (
   `period4` varchar(255) NOT NULL,
   `period5` varchar(255) NOT NULL,
   `period6` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `semester2`
---
-
-CREATE TABLE `semester2` (
-  `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `faculty` varchar(255) NOT NULL,
-  `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -235,21 +213,6 @@ CREATE TABLE `semester2paarth` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `semester3`
---
-
-CREATE TABLE `semester3` (
-  `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `faculty` varchar(255) NOT NULL,
-  `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `semester3paarth`
 --
 
@@ -261,21 +224,6 @@ CREATE TABLE `semester3paarth` (
   `period4` varchar(255) NOT NULL,
   `period5` varchar(255) NOT NULL,
   `period6` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `semester4`
---
-
-CREATE TABLE `semester4` (
-  `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `faculty` varchar(255) NOT NULL,
-  `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -297,21 +245,6 @@ CREATE TABLE `semester4paarth` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `semester5`
---
-
-CREATE TABLE `semester5` (
-  `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `faculty` varchar(255) NOT NULL,
-  `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `semester5paarth`
 --
 
@@ -323,21 +256,6 @@ CREATE TABLE `semester5paarth` (
   `period4` varchar(255) NOT NULL,
   `period5` varchar(255) NOT NULL,
   `period6` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `semester6`
---
-
-CREATE TABLE `semester6` (
-  `id` int(11) NOT NULL,
-  `day` varchar(255) NOT NULL,
-  `course` varchar(255) NOT NULL,
-  `faculty` varchar(255) NOT NULL,
-  `class` varchar(255) NOT NULL,
-  `time` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -379,39 +297,9 @@ ALTER TABLE `faculties`
   ADD PRIMARY KEY (`sr_no`);
 
 --
--- Indexes for table `semester1`
+-- Indexes for table `final`
 --
-ALTER TABLE `semester1`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `semester2`
---
-ALTER TABLE `semester2`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `semester3`
---
-ALTER TABLE `semester3`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `semester4`
---
-ALTER TABLE `semester4`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `semester5`
---
-ALTER TABLE `semester5`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `semester6`
---
-ALTER TABLE `semester6`
+ALTER TABLE `final`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -437,40 +325,10 @@ ALTER TABLE `faculties`
   MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `semester1`
+-- AUTO_INCREMENT for table `final`
 --
-ALTER TABLE `semester1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `semester2`
---
-ALTER TABLE `semester2`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `semester3`
---
-ALTER TABLE `semester3`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `semester4`
---
-ALTER TABLE `semester4`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `semester5`
---
-ALTER TABLE `semester5`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `semester6`
---
-ALTER TABLE `semester6`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `final`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=308;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
