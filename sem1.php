@@ -39,6 +39,11 @@ include 'connection.php';
                     padding: 0px;
                 }
             }
+            select{
+                border: none;
+                outline: none;
+                -webkit-appearance: none;
+            }
         }
     </style>
 
