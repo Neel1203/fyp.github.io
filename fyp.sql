@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 09:27 PM
+-- Generation Time: Dec 12, 2022 at 06:05 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -178,6 +178,48 @@ CREATE TABLE `final` (
   `sem` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `final`
+--
+
+INSERT INTO `final` (`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) VALUES
+(1, 'Physics - I', 'Mrs. Varsha Kinge', 'TH', 'monday', '10:30 - 11:30', 'period1', 1),
+(2, 'Communication Skills', 'Mrs. Varsha Kinge', 'TH', 'monday', '11:30 - 12:30', 'period2', 1),
+(3, 'Physics - I', 'Dr. S.G. Kolte', 'TH', 'monday', '1:15 - 2:15', 'period3', 1),
+(4, 'Computer & ICT Lab', 'Mrs. Snehal Suryavanshi', '211', 'monday', '2:15 - 3:15', 'period4', 1),
+(5, 'Web Design Lab', 'Mrs. Varsha Kinge', '7', 'monday', '3:30 - 4:30', 'period5', 1),
+(6, 'Basic Mathematics', 'Mrs. Rupali Patil', 'TH', 'monday', '4:30 - 5:30', 'period6', 1),
+(7, 'Basic Mathematics', 'Mrs. Rupali Patil', '7', 'tuesday', '10:30 - 11:30', 'period1', 1),
+(8, 'Basic Mathematics', 'Mrs. Snehal Suryavanshi', '201', 'tuesday', '11:30 - 12:30', 'period2', 1),
+(9, 'Basic Mathematics', 'Dr. S.G. Kolte', '201', 'tuesday', '1:15 - 2:15', 'period3', 1),
+(10, 'Basic Mathematics', 'Mrs. Snehal Suryavanshi', '201', 'tuesday', '2:15 - 3:15', 'period4', 1),
+(11, 'Communication Skills', 'Dr. S.G. Kolte', '202', 'tuesday', '3:30 - 4:30', 'period5', 1),
+(12, 'Physics - I', 'Dr. S.G. Kolte', '7', 'tuesday', '4:30 - 5:30', 'period6', 1),
+(13, 'Communication Skills', 'Mr. Nilesh Kitke', '212', 'wednesday', '10:30 - 11:30', 'period1', 1),
+(14, 'Basic Mathematics', 'Mr. Debraj Moulick', '2', 'wednesday', '11:30 - 12:30', 'period2', 1),
+(15, 'Physics - I', 'Mr. Dnyandev Shinde', 'Physics - I', 'wednesday', '1:15 - 2:15', 'period3', 1),
+(16, 'Basic Mathematics', 'Mr. Debraj Moulick', '212', 'wednesday', '2:15 - 3:15', 'period4', 1),
+(17, 'Communication Skills', 'Mr. Debraj Moulick', '213', 'wednesday', '3:30 - 4:30', 'period5', 1),
+(18, 'Communication Skills', 'Mr. Nilesh Kitke', '213', 'wednesday', '4:30 - 5:30', 'period6', 1),
+(19, 'Physics - I', 'Dr. S.G. Kolte', '7', 'thursday', '10:30 - 11:30', 'period1', 1),
+(20, 'Basic Mathematics', 'Mrs. Varsha Kinge', '201', 'thursday', '11:30 - 12:30', 'period2', 1),
+(21, 'Physics - I', 'Mrs. Varsha Kinge', '201', 'thursday', '1:15 - 2:15', 'period3', 1),
+(22, 'Basic Mathematics', 'Mrs. Varsha Kinge', '201', 'thursday', '2:15 - 3:15', 'period4', 1),
+(23, 'Basic Mathematics', 'Mrs. Snehal Suryavanshi', '211', 'thursday', '3:30 - 4:30', 'period5', 1),
+(24, 'Computer & ICT Lab', 'Mrs. Snehal Suryavanshi', '211', 'thursday', '4:30 - 5:30', 'period6', 1),
+(25, 'Basic Mathematics', 'Mrs. Varsha Kinge', '211', 'friday', '10:30 - 11:30', 'period1', 1),
+(26, 'Communication Skills', 'Mrs. Varsha Kinge', '`_class_2', 'friday', '11:30 - 12:30', 'period2', 1),
+(27, 'Basic Mathematics', 'Mrs. Varsha Kinge', '201', 'friday', '1:15 - 2:15', 'period3', 1),
+(28, 'Basic Mathematics', 'Dr. S.G. Kolte', '201', 'friday', '2:15 - 3:15', 'period4', 1),
+(29, 'Communication Skills', 'Mrs. Varsha Kinge', '201', 'friday', '3:30 - 4:30', 'period5', 1),
+(30, 'Physics - I', 'Dr. S.G. Kolte', '7', 'friday', '4:30 - 5:30', 'period6', 1),
+(31, 'Communication Skills', 'Mr. Debraj Moulick', '2', 'saturday', '10:30 - 11:30', 'period1', 1),
+(32, 'Basic Mathematics', 'Mr. Dnyandev Shinde', '2', 'saturday', '11:30 - 12:30', 'period2', 1),
+(33, 'Basic Mathematics', 'Mr. Nilesh Kitke', '3', 'saturday', '1:15 - 2:15', 'period3', 1),
+(34, 'Computer & ICT Lab', 'Dr. S.G. Kolte', '201', 'saturday', '2:15 - 3:15', 'period4', 1),
+(35, 'Communication Skills', 'Mrs. Varsha Kinge', '201', 'saturday', '3:30 - 4:30', 'period5', 1),
+(36, 'Physics - I', 'Dr. S.G. Kolte', '7', 'saturday', '4:30 - 5:30', 'period6', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -274,6 +316,25 @@ CREATE TABLE `semester6paarth` (
   `period6` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL,
+  `svv` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`id`, `svv`, `pass`) VALUES
+(1, 'paarth.dalvi', 'paarth123');
+
 --
 -- Indexes for dumped tables
 --
@@ -303,6 +364,12 @@ ALTER TABLE `final`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -328,7 +395,13 @@ ALTER TABLE `faculties`
 -- AUTO_INCREMENT for table `final`
 --
 ALTER TABLE `final`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=308;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
