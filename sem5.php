@@ -1863,6 +1863,7 @@ include 'connection.php';
     <div class="form-btn-container">
         <input type="submit" value="Upload" name="upload" class="sembtn" style="margin: 20px;">
         <button class="sembtn" style="margin: 20px;" onclick="window.print(); return false;">Print</button>
+        <a href="http://localhost/fyp.github.io./index.html" class="sembtn" style="margin: 20px;">Logout</a>
     </div>
     </div>
     </form>

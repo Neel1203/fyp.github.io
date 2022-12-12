@@ -154,265 +154,265 @@ if(isset($_POST['upload']))
     $sat_class_6 = $_POST['sat_class_6'];
 
     // Monday Queries
-    $mon_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_1',
+        '$mon_course_1',
         '$mon_faculty_1','$mon_class_1',
         'monday','10:30 - 11:30','period1','1'
     )";
-    $mon_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_2',
+        '$mon_course_2',
         '$mon_faculty_2','$mon_class_2',
         'monday','11:30 - 12:30','period2','1'
     )";
-    $mon_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_3',
+        '$mon_course_3',
         '$mon_faculty_3','$mon_class_3',
         'monday','1:15 - 2:15','period3','1'
     )";
-    $mon_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_4',
+        '$mon_course_4',
         '$mon_faculty_4','$mon_class_4',
         'monday','2:15 - 3:15','period4','1'
     )";
-    $mon_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_5',
+        '$mon_course_5',
         '$mon_faculty_5','$mon_class_5',
         'monday','3:30 - 4:30','period5','1'
     )";
-    $mon_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $mon_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$mon_course_6',
+        '$mon_course_6',
         '$mon_faculty_6','$mon_class_6',
         'monday','4:30 - 5:30','period6','1'
     )";
 
     // Tuesday Queries
-    $tue_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_1',
+        '$tue_course_1',
         '$tue_faculty_1','$tue_class_1',
         'tuesday','10:30 - 11:30','period1','1'
     )";
-    $tue_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_2',
+        '$tue_course_2',
         '$tue_faculty_2','$tue_class_2',
         'tuesday','11:30 - 12:30','period2','1'
     )";
-    $tue_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_3',
+        '$tue_course_3',
         '$tue_faculty_3','$tue_class_3',
         'tuesday','1:15 - 2:15','period3','1'
     )";
-    $tue_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_4',
+        '$tue_course_4',
         '$tue_faculty_4','$tue_class_4',
         'tuesday','2:15 - 3:15','period4','1'
     )";
-    $tue_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_5',
+        '$tue_course_5',
         '$tue_faculty_5','$tue_class_5',
         'tuesday','3:30 - 4:30','period5','1'
     )";
-    $tue_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $tue_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$tue_course_6',
+        '$tue_course_6',
         '$tue_faculty_6','$tue_class_6',
         'tuesday','4:30 - 5:30','period6','1'
     )";
 
     // Wednesday Queries
-    $wed_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_1',
+        '$wed_course_1',
         '$wed_faculty_1','$wed_class_1',
         'wednesday','10:30 - 11:30','period1','1'
     )";
-    $wed_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_2',
+        '$wed_course_2',
         '$wed_faculty_2','$wed_class_2',
         'wednesday','11:30 - 12:30','period2','1'
     )";
-    $wed_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_3',
+        '$wed_course_3',
         '$wed_faculty_3','$wed_class_3',
         'wednesday','1:15 - 2:15','period3','1'
     )";
-    $wed_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_4',
+        '$wed_course_4',
         '$wed_faculty_4','$wed_class_4',
         'wednesday','2:15 - 3:15','period4','1'
     )";
-    $wed_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_5',
+        '$wed_course_5',
         '$wed_faculty_5','$wed_class_5',
         'wednesday','3:30 - 4:30','period5','1'
     )";
-    $wed_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $wed_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$wed_course_6',
+        '$wed_course_6',
         '$wed_faculty_6','$wed_class_6',
         'wednesday','4:30 - 5:30','period6','1'
     )";
 
     // Thursday Queries
-    $thu_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_1',
+        '$thu_course_1',
         '$thu_faculty_1','$thu_class_1',
         'thursday','10:30 - 11:30','period1','1'
     )";
-    $thu_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_2',
+        '$thu_course_2',
         '$thu_faculty_2','$thu_class_2',
         'thursday','11:30 - 12:30','period2','1'
     )";
-    $thu_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_3',
+        '$thu_course_3',
         '$thu_faculty_3','$thu_class_3',
         'thursday','1:15 - 2:15','period3','1'
     )";
-    $thu_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_4',
+        '$thu_course_4',
         '$thu_faculty_4','$thu_class_4',
         'thursday','2:15 - 3:15','period4','1'
     )";
-    $thu_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_5',
+        '$thu_course_5',
         '$thu_faculty_5','$thu_class_5',
         'thursday','3:30 - 4:30','period5','1'
     )";
-    $thu_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $thu_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$thu_course_6',
+        '$thu_course_6',
         '$thu_faculty_6','$thu_class_6',
         'thursday','4:30 - 5:30','period6','1'
     )";
 
     // Friday Queries
-    $fri_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_1',
+        '$fri_course_1',
         '$fri_faculty_1','$fri_class_1',
         'friday','10:30 - 11:30','period1','1'
     )";
-    $fri_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_2',
+        '$fri_course_2',
         '$fri_faculty_2','$fri_class_2',
         'friday','11:30 - 12:30','period2','1'
     )";
-    $fri_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_3',
+        '$fri_course_3',
         '$fri_faculty_3','$fri_class_3',
         'friday','1:15 - 2:15','period3','1'
     )";
-    $fri_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_4',
+        '$fri_course_4',
         '$fri_faculty_4','$fri_class_4',
         'friday','2:15 - 3:15','period4','1'
     )";
-    $fri_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_5',
+        '$fri_course_5',
         '$fri_faculty_5','$fri_class_5',
         'friday','3:30 - 4:30','period5','1'
     )";
-    $fri_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $fri_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$fri_course_6',
+        '$fri_course_6',
         '$fri_faculty_6','$fri_class_6',
         'friday','4:30 - 5:30','period6','1'
     )";
 
     // Saturday Queries
-    $sat_1q1 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q1 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_1',
+        '$sat_course_1',
         '$sat_faculty_1','$sat_class_1',
         'saturday','10:30 - 11:30','period1','1'
     )";
-    $sat_1q2 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q2 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_2',
+        '$sat_course_2',
         '$sat_faculty_2','$sat_class_2',
         'saturday','11:30 - 12:30','period2','1'
     )";
-    $sat_1q3 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q3 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_3',
+        '$sat_course_3',
         '$sat_faculty_3','$sat_class_3',
         'saturday','1:15 - 2:15','period3','1'
     )";
-    $sat_1q4 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q4 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_4',
+        '$sat_course_4',
         '$sat_faculty_4','$sat_class_4',
         'saturday','2:15 - 3:15','period4','1'
     )";
-    $sat_1q5 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q5 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_5',
+        '$sat_course_5',
         '$sat_faculty_5','$sat_class_5',
         'saturday','3:30 - 4:30','period5','1'
     )";
-    $sat_1q6 = "INSERT INTO `final`(`id`, `courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
+    $sat_1q6 = "INSERT INTO `final`(`courses`, `faculty`, `class`, `day`, `time`, `period`, `sem`) 
     VALUES 
     (
-        '[value-1]','$sat_course_6',
+        '$sat_course_6',
         '$sat_faculty_6','$sat_class_6',
         'saturday','4:30 - 5:30','period6','1'
     )";
