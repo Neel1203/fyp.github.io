@@ -18,7 +18,7 @@ include 'connection.php';
     </section>
 
     <section id="btn-container">
-        <a href="#"><button class="sembtn">First Semester</button></a>
+        <a href="#"><button class="sembtn active">First Semester</button></a>
         <a href="./sem2.php"><button class="sembtn">Second Semester</button></a>
         <a href="./sem3.php"><button class="sembtn">Third Semester</button></a>
         <a href="./sem4.php"><button class="sembtn">Fourth Semester</button></a>
@@ -44,6 +44,9 @@ include 'connection.php';
                 outline: none;
                 -webkit-appearance: none;
             }
+        }
+        .active{
+            background-color: red;
         }
     </style>
 

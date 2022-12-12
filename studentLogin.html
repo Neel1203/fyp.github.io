@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Table Generator | Login</title>
+    <link rel="stylesheet" href="./CSS/login.css">
+    <script src="./JS/script.js"></script>
+</head>
+<body>
+    <section id="navbar">
+        <p>TIME TABLE GENERATOR, Computer Engineering Department</p>
+    </section>
+
+	<div class="loginbox">
+    <img src="./RESOURCES/admin.png" class="avatar">
+        <h1>Login</h1>
+        <form action="./studentLogin.php" method="POST" autocomplete="off">
+            <p>SVV ID: </p>
+            <input type="text" name="uid" placeholder="Enter SVV ID" required="required">
+            <p>Password: </p>
+            <input type="password" name="pwd" placeholder="Enter Password:" required="required">
+            <input type="submit" name="login-submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>

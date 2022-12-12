@@ -1,16 +1,16 @@
 <?php
 include 'connection.php';
 
-$email = $_POST['uid'];
+$svv = $_POST['uid'];
 $pass = $_POST['pwd'];
 
-$sql = "SELECT * FROM `admin` WHERE `email` = '$email' AND `pass` = '$pass'";
+$sql = "SELECT * FROM `student` WHERE `svv` = '$svv' AND `pass` = '$pass'";
 
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1)
 {
-    header("Location: ./aloginwel.html");
+    header("Location: ./sloginwel.html");
 }
 else {
     echo ("<SCRIPT LANGUAGE='JavaScript'>

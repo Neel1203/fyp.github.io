@@ -459,7 +459,7 @@ if(isset($_POST['upload']))
     $sat_1r5 = mysqli_query($conn, $sat_1q5);
     $sat_1r6 = mysqli_query($conn, $sat_1q6);
 
-    if ($mon_r1)
+    if ($mon_1r1)
     {
         echo "<SCRIPT LANGUAGE='JavaScript'>
         window.alert('Data Inserted! Thank You')
